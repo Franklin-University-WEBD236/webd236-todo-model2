@@ -3,7 +3,7 @@ global $db;
 try {
   $fileName = CONFIG['databaseFile'] . ".db3";
   if (!file_exists($fileName)) {
-    errorPage(404, "Database file does not. " . $e->getMessage() . $e->getTraceAsString());
+    errorPage(404, "Database file <code>$fileName</code> does not exist. Did you create it?");
   }
   $db = new PDO('sqlite:' . $fileName);
   if (!$db) {
