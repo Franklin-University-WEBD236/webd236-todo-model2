@@ -1,9 +1,17 @@
 <?php
 global $db;
 try {
-    $db = new PDO('sqlite:ToDoList.db3');
+  $fileName = CONFIG['databaseFile'] . ".db3";
+  if (!file_exists($fileName)) {
+    errorPage(404, "Database file does not. " . $e->getMessage() . $e->getTraceAsString());
+  }
+  $db = new PDO('sqlite:' . $fileName);
+  if (!$db) {
+    errorPage(500, print_r($db->errorInfo(), 1) );
+  }
+  adHocQuery("PRAGMA foreign_keys=ON;");
 } catch (PDOException $e) {
-    die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
+    errorPage(500, "Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
 
 function adHocQuery($q) {
