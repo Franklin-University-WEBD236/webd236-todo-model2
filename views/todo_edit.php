@@ -1,7 +1,7 @@
 %% views/header.html %%
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-12">
 
     <form action="@@todo/edit/{{$todo['id']}}@@" method="post">
       <div class="form-group">

@@ -26,7 +26,7 @@ function get_list() {
   renderTemplate(
     "views/index.php",
     array(
-      'title' => 'To Do List',
+      'title' => 'Home',
       'todos' => $todos,
       'dones' => $dones
     )

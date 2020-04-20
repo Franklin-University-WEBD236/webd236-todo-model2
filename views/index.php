@@ -1,7 +1,7 @@
 %% views/header.html %%
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-12">
 
       <form action="@@todo/add@@" method="post">
       <div class="form-group">
@@ -17,7 +17,7 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-12">
     <h2>Current To Do:</h2>
       
     <table class="table table-striped" frame="box">
@@ -46,7 +46,7 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-12">
     <h2>Past To Do:</h2>
     <table class="table table-striped" frame="box">
       <thead class="thead-dark">
